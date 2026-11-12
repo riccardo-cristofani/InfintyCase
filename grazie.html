@@ -3,16 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grazie — InfinityCase</title>
+  <title>Richiesta non inviata — InfinityCase</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="thank-you">
   <main>
-    <div class="thank-you-mark" aria-hidden="true">✓</div>
-    <p class="eyebrow">Richiesta inviata</p>
-    <h1>Grazie!</h1>
-    <p>La tua richiesta è stata inviata correttamente. Ti ricontatteremo via email appena possibile.</p>
-    <a class="primary-link" href="index.html">Torna alla pagina principale <span aria-hidden="true">↗</span></a>
+    <div class="thank-you-mark" aria-hidden="true">✕</div>
+    <p class="eyebrow">Richiesta non inviata</p>
+    <p>Il fatto che tu sia arrivato fino a qui ci rende molto felici. Questo è un esperimento e il prodotto non è ancora disponibile, non abbiamo raccolto nessuno dei tuoi dati personali quindi non verrai ricontattato.</p>
+    <p>Ci spiace che tu non possa ricevere ciò che cercavi, ma se sei veramente interessato rimani aggiornato perché potrebbe diventare disponibile in futuro se riusciamo a realizzarlo!</p>
+
+    <p id="interesse-descrizione"><strong>Se sei interessato, premi il pulsante.</strong> Ci aiuterà a capire se continuare la ricerca.</p>
+    <form id="interesse-form" name="segnalazione-interesse" method="POST"
+          data-netlify="true" action="grazie.html?interesse=inviato">
+      <input type="hidden" name="form-name" value="segnalazione-interesse">
+      <input type="hidden" name="interesse" value="si">
+      <input type="hidden" name="versione" id="versione-scelta" value="Non specificato">
+      <button class="primary-link" type="submit">SONO INTERESSATO <span aria-hidden="true">↗</span></button>
+    </form>
+    <p id="interesse-confermato" role="status" hidden>Grazie, abbiamo registrato il tuo interesse.</p>
+
+
+     <p>Grazie per il tuo tempo!</p>
+    <a class="thank-you-back" href="index.html">Torna alla pagina principale</a>
+  
   </main>
+  <script>
+    const modello = sessionStorage.getItem('versione_scelta');
+    if (modello) {
+      document.getElementById('versione-scelta').value = modello;
+    }
+
+    if (new URLSearchParams(window.location.search).get('interesse') === 'inviato') {
+      document.getElementById('interesse-form').hidden = true;
+      document.getElementById('interesse-descrizione').hidden = true;
+      document.getElementById('interesse-confermato').hidden = false;
+    }
+  </script>
 </body>
 </html>

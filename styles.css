@@ -201,12 +201,16 @@ button:hover { background: var(--accent-dark); transform: translateY(-2px); }
 }
 .thank-you-mark {
   width: 56px; height: 56px; margin: 0 auto 24px; display: grid; place-items: center;
-  border-radius: 50%; background: #e6eee4; color: #3e6b46; font-size: 26px;
+  border-radius: 50%; background: #f4e3e1; color: #9d332b; font-size: 26px;
 }
 .thank-you .eyebrow { justify-content: center; }
-.thank-you h1 { margin: 16px 0; font-size: 54px; letter-spacing: -.06em; }
 .thank-you main > p:not(.eyebrow) { margin-top: 16px; color: var(--muted); }
 .thank-you .primary-link { margin-top: 28px; }
+.thank-you-back {
+  display: inline-block; margin-top: 18px; color: var(--muted);
+  font-size: 12px; text-decoration: underline; text-underline-offset: 3px;
+}
+.thank-you-back:hover { color: var(--accent); }
 @media (max-width: 600px) {
   .thank-you main { padding: 42px 25px; }
 }

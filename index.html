@@ -85,18 +85,22 @@
           <p class="form-intro">Compila il modulo per ricevere aggiornamenti.</p>
 
           <form name="richiesta-disponibilita" method="POST" data-netlify="true"
-                action="grazie.html">
+                action="grazie.html" netlify-honeypot="bot-field" onsubmit="sessionStorage.setItem('versione_scelta', document.getElementById('versione').value)">
             <input type="hidden" name="form-name" value="richiesta-disponibilita">
+
+            <p hidden>
+              <label>compilare questo campo: <input name="bot-field"> </label>
+            </p>
 
             <div class="field">
               <label for="nome">Nome e cognome</label>
-              <input id="nome" name="nome" type="text" autocomplete="name"
+              <input id="nome" type="text" autocomplete="name"
                      placeholder="Il tuo nome" required>
             </div>
 
             <div class="field">
               <label for="email">Indirizzo email</label>
-              <input id="email" name="email" type="email" autocomplete="email"
+              <input id="email" type="email" autocomplete="email"
                      placeholder="nome@email.com"
                      pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                      title="Inserisci un indirizzo email valido, ad esempio nome@dominio.it"
@@ -106,9 +110,21 @@
             <div class="field">
               <label for="versione">Versione desiderata</label>
               <select id="versione" name="versione" required>
-                <option value="" selected disabled>Seleziona una versione</option>
-                <option value="iPhone - versione da definire">iPhone — versione da definire</option>
-                <option value="Samsung - versione da definire">Samsung — versione da definire</option>
+                <option value="" selected disabled>Seleziona il tuo modello</option>
+                <option value="iPhone 17 / 17 Pro / 17 Pro Max">iPhone 17 / 17 Pro / 17 Pro Max</option>
+                <option value="iPhone 16 / 16 Plus / 16 Pro / 16 Pro Max">iPhone 16 / 16 Plus / 16 Pro / 16 Pro Max</option>
+                <option value="iPhone 15 / 15 Plus / 15 Pro / 15 Pro Max">iPhone 15 / 15 Plus / 15 Pro / 15 Pro Max</option>
+                <option value="iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max">iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max</option>
+                <option value="iPhone 13 / 13 Mini / 13 Pro / 13 Pro Max">iPhone 13 / 13 Mini / 13 Pro / 13 Pro Max</option>
+                <option value="Samsung Galaxy S26 / S26+ / S26 Ultra">Samsung Galaxy S26 / S26+ / S26 Ultra</option>
+                <option value="Samsung Galaxy S25 / S25+ / S25 Ultra">Samsung Galaxy S25 / S25+ / S25 Ultra</option>
+                <option value="Samsung Galaxy S24 / S24+ / S24 Ultra">Samsung Galaxy S24 / S24+ / S24 Ultra</option>
+                <option value="Samsung Galaxy S23 / S23+ / S23 Ultra">Samsung Galaxy S23 / S23+ / S23 Ultra</option>
+                <option value="Samsung Galaxy Z Flip / Z Fold">Samsung Galaxy Z Flip / Z Fold</option>
+                <option value="Google Pixel 10 / 10 Pro">Google Pixel 10 / 10 Pro</option>
+                <option value="Google Pixel 9 / 9 Pro / 9a">Google Pixel 9 / 9 Pro / 9a</option>
+                <option value="Xiaomi 15 / 15 Ultra">Xiaomi 15 / 15 Ultra</option>
+                <option value="Xiaomi 14 / 14T / 14T Pro">Xiaomi 14 / 14T / 14T Pro</option>
                 <option value="Altro modello">Altro modello</option>
               </select>
             </div>
@@ -116,6 +132,7 @@
             <button type="submit">RICHIEDI DISPONIBILITÀ <span aria-hidden="true">↗</span></button>
             <p class="privacy">L'invio del modulo non comporta alcun obbligo di acquisto.</p>
           </form>
+
         </div>
       </div>
     </section>
