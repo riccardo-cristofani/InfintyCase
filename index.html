@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="InfinityCase: i tuoi dati, sempre con te. Richiedi la disponibilità della versione che desideri.">
+  <title>InfinityCase — Your data, always</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="animations.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="InfinityCase, pagina iniziale">
+        <span class="brand-mark" aria-hidden="true">I</span>
+        <span>INFINITYCASE</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <a href="#progetto">Il progetto</a>
+        <a class="nav-cta" href="#disponibilita">
+          Richiedi disponibilità <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <img class="hero-image" src="infinitycase-product.jpeg"
+         alt="Confezione InfinityCase aperta con custodia bianca per smartphone">
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-heading">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>Più spazio. Più libertà. Più privacy.</p>
+          <h1>I tuoi dati.<br><span>Sempre con te.</span></h1>
+        </div>
+        <div class="hero-details">
+          <p class="intro">
+            Dimentica i limiti di spazio sul telefono. InfinityCase è pensata
+            per portare i tuoi dati con te, senza abbonamenti e mantenendo
+            il controllo delle tue informazioni.
+          </p>
+          <a class="primary-link" href="#disponibilita">
+            Scopri la disponibilità <span aria-hidden="true">↘</span>
+          </a>
+        </div>
+        <ul class="feature-list" aria-label="Caratteristiche di InfinityCase">
+          <li><span>01</span>Più spazio</li>
+          <li><span>02</span>Senza abbonamenti</li>
+          <li><span>03</span>Più controllo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-note" id="progetto" aria-labelledby="project-note-title">
+      <div class="project-note-content">
+        <div class="project-heading">
+          <p class="eyebrow">Un progetto indipendente</p>
+          <h2 id="project-note-title">Nato a Pisa.<br>Costruito insieme.</h2>
+        </div>
+        <div class="project-description">
+          <p>
+            InfinityCase è realizzato da studenti dell'Università di Pisa in collaborazione
+            con aziende locali.
+          </p>
+          <p class="availability-note">
+            Le versioni dipendono dalla produzione: non tutti i modelli di telefono
+            potrebbero essere già stati realizzati o essere disponibili.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="request" id="disponibilita">
+      <div class="request-inner">
+        <div class="request-copy">
+          <p class="eyebrow">Il prossimo passo</p>
+          <h2>Verifica la disponibilità per il tuo telefono.</h2>
+          <p>Indicaci il modello che ti interessa: ti ricontatteremo via email appena possibile.</p>
+          <p class="request-assurance">Nessun obbligo di acquisto. Solo un aggiornamento sulla disponibilità.</p>
+        </div>
+
+        <div class="form-wrap">
+          <h2>Richiedi disponibilità</h2>
+          <p class="form-intro">Compila il modulo per ricevere aggiornamenti.</p>
+
+          <form name="richiesta-disponibilita" method="POST" data-netlify="true"
+                action="grazie.html">
+            <input type="hidden" name="form-name" value="richiesta-disponibilita">
+
+            <div class="field">
+              <label for="nome">Nome e cognome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name"
+                     placeholder="Il tuo nome" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Indirizzo email</label>
+              <input id="email" name="email" type="email" autocomplete="email"
+                     placeholder="nome@email.com"
+                     pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                     title="Inserisci un indirizzo email valido, ad esempio nome@dominio.it"
+                     required>
+            </div>
+
+            <div class="field">
+              <label for="versione">Versione desiderata</label>
+              <select id="versione" name="versione" required>
+                <option value="" selected disabled>Seleziona una versione</option>
+                <option value="iPhone - versione da definire">iPhone — versione da definire</option>
+                <option value="Samsung - versione da definire">Samsung — versione da definire</option>
+                <option value="Altro modello">Altro modello</option>
+              </select>
+            </div>
+
+            <button type="submit">RICHIEDI DISPONIBILITÀ <span aria-hidden="true">↗</span></button>
+            <p class="privacy">L'invio del modulo non comporta alcun obbligo di acquisto.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">I</span>
+      <span>INFINITYCASE</span>
+    </a>
+    <p>© 2026 InfinityCase · Tutti i diritti riservati</p>
+    <a href="#top" class="back-to-top">Torna su ↑</a>
+  </footer>
+</body>
+</html>
