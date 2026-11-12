@@ -210,3 +210,23 @@ button:hover { background: var(--accent-dark); transform: translateY(-2px); }
 @media (max-width: 600px) {
   .thank-you main { padding: 42px 25px; }
 }
+
+.checkbox-field {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin: 18px 0 20px;
+}
+.checkbox-field input[type="checkbox"] {
+  width: 17px; height: 17px; min-width: 17px; margin-top: 2px; padding: 0;
+  accent-color: var(--accent); cursor: pointer;
+}
+.checkbox-field label {
+  margin: 0; font-size: 12px; font-weight: 500; line-height: 1.5;
+  color: var(--muted); cursor: pointer;
+}
+.checkbox-field label a, .footer-link {
+  color: var(--ink); text-decoration: underline; text-underline-offset: 3px;
+  transition: color .2s;
+}
+.checkbox-field label a:hover, .footer-link:hover {
+  color: var(--accent);
+}
