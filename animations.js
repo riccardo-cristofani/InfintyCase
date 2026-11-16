@@ -4,7 +4,9 @@ if (
 ) {
   const elements = document.querySelectorAll(
     '.hero-image, .hero-heading > *, .hero-details > *, .feature-list > *, ' +
-    '.project-note-content > *, .request-copy > *, .form-wrap'
+    '.project-note-content > *, .request-copy > *, .form-wrap, ' +
+    '.cover-preview-heading > *, .cover-preview-card, .catalog-heading > *, ' +
+    '.cover-card, .preorder-note > *'
   );
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

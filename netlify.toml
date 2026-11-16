@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/vetrina-cover"
+  to = "/vetrina-cover.html"
+  status = 200
