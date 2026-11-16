@@ -109,12 +109,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .form-intro { margin: 8px 0 28px; color: var(--muted); font-size: 14px; }
 .field { margin-bottom: 18px; }
 label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; }
-input, select {
+input, select, textarea {
   width: 100%; padding: 14px; border: 1px solid var(--line); border-radius: 8px;
   background: #fbfaf7; color: var(--ink); font: inherit; font-size: 14px;
   outline: none; transition: border-color .2s, box-shadow .2s;
 }
-input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(164,95,61,.12); }
+textarea { min-height: 90px; resize: vertical; }
+input:focus, select:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(164,95,61,.12); }
 button {
   width: 100%; display: flex; justify-content: center; align-items: center; gap: 12px;
   padding: 16px; border: 0; border-radius: 8px; background: var(--accent);
@@ -330,6 +331,49 @@ button:hover { background: var(--accent-dark); transform: translateY(-2px); }
 .catalog-empty { padding: 36px 0; color: var(--muted); text-align: center; }
 .catalog-more { margin-top: 30px; }
 
+.benefits-page { padding-bottom: 80px; }
+.benefits-hero {
+  max-width: 1216px; margin: auto; padding: 82px 32px 48px;
+}
+.benefits-hero h1 {
+  max-width: 800px; margin-top: 20px; font-size: clamp(48px, 7vw, 78px);
+  font-weight: 600; line-height: .98; letter-spacing: -.065em;
+}
+.benefits-hero h1 span {
+  color: var(--accent); font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400; font-style: italic;
+}
+.benefits-hero > p:not(.eyebrow) {
+  max-width: 700px; margin-top: 22px; color: var(--muted); font-size: 17px;
+}
+.benefits-disclaimer {
+  max-width: 1216px; margin: 0 auto 34px; padding: 14px 18px;
+  border-left: 3px solid var(--accent); background: var(--sand);
+  color: #51483e; font-size: 13px;
+}
+.benefits-grid {
+  max-width: 1216px; margin: auto; padding: 0 32px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+}
+.benefit-card {
+  min-width: 0; padding: 22px; border: 1px solid var(--line);
+  border-radius: 14px; background: var(--surface);
+}
+.benefit-art {
+  min-height: 150px; margin-bottom: 20px; display: grid; place-items: center;
+  border-radius: 10px; background: #f3efe8;
+}
+.benefit-art svg { width: min(100%, 240px); height: 150px; }
+.benefit-stroke { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.benefit-fill { fill: var(--surface); stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.benefit-accent { fill: #e6b28f; stroke: var(--accent-dark); stroke-width: 3; stroke-linejoin: round; }
+.benefit-card h2 { font-size: 21px; line-height: 1.15; letter-spacing: -.035em; }
+.benefit-card p { margin-top: 10px; color: var(--muted); font-size: 14px; }
+.benefits-note {
+  max-width: 1216px; margin: 28px auto 0; padding: 0 32px;
+  color: var(--muted); font-size: 13px;
+}
+
 .cover-dialog {
   width: min(100% - 32px, 620px); max-height: min(90vh, 820px); margin: auto;
   padding: 34px; overflow-y: auto; border: 1px solid var(--line); border-radius: 18px;
@@ -366,6 +410,7 @@ button:hover { background: var(--accent-dark); transform: translateY(-2px); }
 @media (max-width: 900px) {
   .cover-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cover-preview-heading { align-items: start; flex-direction: column; gap: 18px; }
+  .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
   .header-inner { height: auto; padding: 12px 18px; flex-wrap: wrap; row-gap: 8px; }
@@ -399,4 +444,12 @@ button:hover { background: var(--accent-dark); transform: translateY(-2px); }
   .cover-dialog-fields { grid-template-columns: 1fr; }
   .cover-payment-row { gap: 12px; }
   .cover-payment-fields { padding: 14px; }
+  .benefits-page { padding-bottom: 56px; }
+  .benefits-hero { padding: 56px 20px 32px; }
+  .benefits-hero h1 { font-size: clamp(44px, 12vw, 62px); }
+  .benefits-hero > p:not(.eyebrow) { font-size: 15px; }
+  .benefits-disclaimer { margin: 0 20px 24px; }
+  .benefits-grid { grid-template-columns: 1fr; padding: 0 20px; gap: 14px; }
+  .benefit-card { padding: 18px; }
+  .benefits-note { padding: 0 20px; }
 }
