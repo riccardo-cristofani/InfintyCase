@@ -64,7 +64,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border-radius: 999px; background: var(--ink); color: white;
   transition: background .2s, transform .2s;
 }
-.nav-cta span { color: white; font-size: 16px; }
+.nav-cta span { color: #e6b28f; font-size: 16px; }
+.nav-cta > span:not([aria-hidden]) { color: white; }
 .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 .hero-image {
@@ -89,7 +90,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   padding: 14px 18px; border-radius: 999px; background: var(--ink); color: white;
   font-size: 13px; font-weight: 700; transition: background .2s, transform .2s;
 }
-.primary-link span { color: white; font-size: 18px; }
+.primary-link span { color: #e6b28f; font-size: 18px; }
+.primary-link > span:not([aria-hidden]) { color: white; }
 .primary-link:hover { background: var(--accent-dark); transform: translateY(-2px); }
 .feature-list {
   grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr);
@@ -98,7 +100,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .feature-list li { display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 650; }
 .feature-list li + li { padding-left: 24px; border-left: 1px solid var(--line); }
-.feature-list li span { color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: 1px; }
+.feature-list li > span:first-child { color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: 1px; }
+.feature-list li > span:last-child:not(:first-child) { color: var(--ink); font-size: 14px; font-weight: 650; letter-spacing: normal; }
 
 .project-note { padding: 82px 32px; background: var(--sand); }
 .project-note-content {
